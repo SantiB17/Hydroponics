@@ -11,7 +11,7 @@ public class CropController {
     public CropController(List<Crop> cropList) {
         this._cropList = cropList;
     }
-    @RequestMapping(method= RequestMethod.POST, value = "/crops")
+    @PostMapping("/crops")
     public String addCrop(@RequestBody Crop crop) {
         _cropList.add(crop);
         return crop.getName() + " added";

@@ -18,12 +18,20 @@ public class Crop {
         this._datePlanted = dateHarvested;
     }
 
+    public String get_datePlanted() {
+        return _datePlanted;
+    }
+
     public Long getId() {
         return id;
     }
 
     public String getName() {
         return _name;
+    }
+
+    public void set_datePlanted(String _datePlanted) {
+        this._datePlanted = _datePlanted;
     }
 
     public void setId(Long id) {

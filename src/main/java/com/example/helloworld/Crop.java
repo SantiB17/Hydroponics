@@ -18,4 +18,5 @@ public class Crop {
     }
 
     private String _name;
+    private String harvested;
 }

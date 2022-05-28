@@ -7,7 +7,7 @@ public class Crop {
    @JsonCreator
     public Crop(@JsonProperty("name") String name, @JsonProperty("dateHarvested") String dateHarvested) {
         this._name = name;
-        this._dateHarvested = dateHarvested;
+        this._datePlanted = dateHarvested;
     }
 
     public String getName() {
@@ -19,5 +19,5 @@ public class Crop {
     }
 
     private String _name;
-    private String _dateHarvested;
+    private String _datePlanted;
 }

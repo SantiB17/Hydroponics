@@ -42,6 +42,15 @@ public class Crop {
         this._name = _name;
     }
 
+    @Override
+    public String toString() {
+        return "Crop{" +
+                "id=" + id +
+                ", _name='" + _name + '\'' +
+                ", _datePlanted='" + _datePlanted + '\'' +
+                '}';
+    }
+
     @Id
     @Column(name = "id", nullable = false)
     private Long id;

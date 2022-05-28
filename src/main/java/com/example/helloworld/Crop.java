@@ -36,6 +36,7 @@ public class Crop {
 
     public void setId(Long id) {
         this.id = id;
+        System.out.println("huH?");
     }
 
     public void setName(String _name) {

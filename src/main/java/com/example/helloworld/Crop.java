@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Crop {
    @JsonCreator
-    public Crop(@JsonProperty("_name") String name) {
+    public Crop(@JsonProperty("name") String name, @JsonProperty("dateHarvested") String dateHarvested) {
         this._name = name;
-        this.dateHarvested =
+        this._dateHarvested = dateHarvested;
     }
 
     public String getName() {
@@ -19,5 +19,5 @@ public class Crop {
     }
 
     private String _name;
-    private String dateHarvested;
+    private String _dateHarvested;
 }

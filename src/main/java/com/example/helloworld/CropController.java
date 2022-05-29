@@ -15,8 +15,8 @@ public class CropController {
     }
     @PostMapping("/crops")
     public String addCrop(@RequestBody Crop crop) {
-        _cropList.add(crop);
-        return crop.getName() + " added";
+        _cropRepository.save(crop);
+        return crop.getName() + " saved";
     }
     @GetMapping("/crops")
     public List<Crop> getAllCrops() {

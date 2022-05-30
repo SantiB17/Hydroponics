@@ -1,7 +1,9 @@
 package com.example.helloworld;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,12 +15,14 @@ public class CropController {
     }
     @PostMapping("/crops")
     public String addCrop(@RequestBody Crop crop) {
-        _cropList.add(crop);
-        return crop.getName() + " added";
+        _cropRepository.save(crop);
+        return crop.getName() + " saved";
     }
     @GetMapping("/crops")
-    public String all() {
-        return toString();
+    public List<Crop> getAllCrops() {
+       _cropRepository.findAll()
+               .forEach(_cropList::add);
+       return _cropList;
     }
     @Override
     public String toString() {
@@ -27,5 +31,7 @@ public class CropController {
                 .collect(Collectors.joining(", "));
     }
 
+    @Autowired
+    private CropRepository _cropRepository;
     private List<Crop> _cropList;
 }
